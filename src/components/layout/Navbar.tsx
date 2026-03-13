@@ -7,6 +7,13 @@ import { cn } from "@/lib/utils";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 
+const NAV_LINKS: { label: string; href: string }[] = [
+  { label: "Courses", href: "/marketplace" },
+  { label: "Influencers", href: "/influencers" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Referral", href: "/dashboard/referrals" },
+];
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,15 +52,15 @@ export function Navbar() {
 
         {/* Centered Navigation (Center) */}
         <div className="hidden lg:flex items-center justify-center gap-1 px-8 py-1.5 bg-white/[0.03] rounded-full border border-white/5 backdrop-blur-md">
-          {["Courses", "Influencers", "Pricing", "Referral"].map((link) => (
-            <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`} 
+          {NAV_LINKS.map((link) => (
+            <Link 
+              key={link.label} 
+              href={link.href} 
               className="px-5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white/30 hover:text-white transition-all duration-300 relative group"
             >
-              {link}
+              {link.label}
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-primary group-hover:w-1/3 transition-all duration-500" />
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -98,11 +105,11 @@ export function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden absolute top-28 left-4 right-4 bg-black/95 backdrop-blur-3xl border border-white/5 p-8 rounded-[2.5rem] flex flex-col gap-6 animate-in slide-in-from-top-4 duration-500 pointer-events-auto shadow-[0_0_100px_rgba(0,0,0,0.9)]">
           <div className="space-y-4">
-            {["Courses", "Influencers", "Pricing", "Referral"].map((link) => (
-               <a key={link} href={`#${link.toLowerCase()}`} className="block text-3xl font-black tracking-tighter italic text-white/90 hover:text-primary transition-colors">
-                  {link}
-               </a>
-            ))}
+             {NAV_LINKS.map((link) => (
+                <Link key={link.label} href={link.href} onClick={() => setIsMenuOpen(false)} className="block text-3xl font-black tracking-tighter italic text-white/90 hover:text-primary transition-colors">
+                   {link.label}
+                </Link>
+             ))}
           </div>
           <div className="h-[1px] w-full bg-white/5" />
           {status === "authenticated" ? (
