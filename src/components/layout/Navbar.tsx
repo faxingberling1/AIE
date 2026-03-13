@@ -9,6 +9,7 @@ import Link from "next/link";
 
 const NAV_LINKS: { label: string; href: string }[] = [
   { label: "Courses", href: "/marketplace" },
+  { label: "Mission", href: "/mission" },
   { label: "Influencers", href: "/influencers" },
   { label: "Pricing", href: "/pricing" },
   { label: "Referral", href: "/dashboard/referrals" },

@@ -2,93 +2,112 @@
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowRight, Briefcase, Globe, Zap } from "lucide-react";
-
-const PERKS = [
-  { icon: Globe, label: "100% Remote", desc: "Work from anywhere in the world." },
-  { icon: Zap, label: "AI Credits", desc: "Unlimited access to all AIE tools." },
-  { icon: Briefcase, label: "Equity", desc: "Meaningful ownership in the company." },
-];
-
-const ROLES = [
-  { title: "Senior Full-Stack Engineer", team: "Engineering", type: "Full-time · Remote", tags: ["Next.js", "Prisma", "AI"] },
-  { title: "AI/ML Engineer", team: "AI Research", type: "Full-time · Remote", tags: ["Python", "PyTorch", "LLMs"] },
-  { title: "Product Designer (UI/UX)", team: "Design", type: "Full-time · Remote", tags: ["Figma", "Motion", "Systems"] },
-  { title: "Head of Growth", team: "Marketing", type: "Full-time · Remote", tags: ["SEO", "Paid", "Analytics"] },
-  { title: "Creator Success Manager", team: "Operations", type: "Full-time · Remote", tags: ["Support", "Education", "Community"] },
-  { title: "Curriculum Developer", team: "Education", type: "Contract · Remote", tags: ["AI", "Course Design", "Video"] },
-];
+import { FadeIn } from "@/components/ui/Animations";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { Sparkles, ArrowRight, Timer, Bell, MoveRight, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function CareersPage() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubmitted(true);
+      setEmail("");
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white selection:bg-primary/30 selection:text-black overflow-hidden">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative pt-40 pb-24 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-radial from-purple-400/5 via-transparent to-transparent pointer-events-none" />
-        <div className="container mx-auto px-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Join the Team</p>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-none">
-            Build the <br /><span className="text-primary">Future</span> with Us
-          </h1>
-          <p className="text-white/40 text-xl max-w-xl mx-auto">
-            We&apos;re a remote-first team building the world&apos;s most advanced AI creator platform. Come shape the future.
-          </p>
-        </div>
-      </section>
+      <main className="relative flex flex-col items-center justify-center pt-48 pb-32">
+        {/* Background Atmosphere */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] bg-[radial-gradient(circle,rgba(0,242,255,0.03)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.02] pointer-events-none" />
 
-      {/* Perks */}
-      <section className="py-12 border-y border-white/5">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl">
-          {PERKS.map(p => (
-            <div key={p.label} className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-                <p.icon className="w-5 h-5" />
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <FadeIn>
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.5em] mb-12 shadow-[0_0_20px_rgba(0,242,255,0.1)]">
+              <Timer className="w-3.5 h-3.5" />
+              <span>Expansion in Progress</span>
+            </div>
+
+            <h1 className="text-7xl md:text-[10rem] font-black tracking-tighter mb-8 leading-[0.8] relative">
+              JOIN THE <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/20 via-white to-white/20 italic font-light pr-4">NUCLEUS</span>
+              {/* Decorative Pulsar */}
+              <motion.div 
+                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl pointer-events-none hidden md:block"
+              />
+            </h1>
+
+            <p className="text-white/40 text-2xl md:text-3xl max-w-2xl mx-auto leading-relaxed font-light mb-16">
+              Our scouting phase is currently closed as we integrate our first cohort of AI researchers and creators.
+            </p>
+
+            <div className="max-w-xl mx-auto mb-24">
+              <GlassCard className="p-8 md:p-12 border-white/5 bg-white/[0.01] rounded-[3rem] relative overflow-hidden group">
+                {/* Internal Glow */}
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                
+                <h3 className="text-xl font-black mb-6 tracking-widest uppercase italic">Get notified when we scale</h3>
+                
+                {submitted ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center gap-4 py-4 text-primary"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
+                      <Send className="w-6 h-6" />
+                    </div>
+                    <span className="font-bold tracking-widest uppercase text-xs">Transmission Received</span>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4">
+                    <input 
+                      type="email" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="ENTER FREQUENCY (EMAIL)"
+                      className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-xs font-bold tracking-widest uppercase focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all placeholder:text-white/20"
+                      required
+                    />
+                    <button 
+                      type="submit"
+                      className="px-8 py-4 rounded-2xl bg-white text-black font-black text-[10px] uppercase tracking-[0.3em] hover:bg-primary transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,242,255,0.4)] whitespace-nowrap group-hover:scale-[1.02]"
+                    >
+                      Alert Me
+                    </button>
+                  </form>
+                )}
+              </GlassCard>
+            </div>
+
+            {/* Values / Teaser */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+              <div className="flex flex-col items-center gap-4">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">01 // RESEARCH</span>
+                <p className="text-xs font-light text-white/60">Exploring the boundaries of synthetic consciousness.</p>
               </div>
-              <div>
-                <p className="font-bold text-white text-sm">{p.label}</p>
-                <p className="text-white/40 text-xs">{p.desc}</p>
+              <div className="flex flex-col items-center gap-4">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">02 // SCALE</span>
+                <p className="text-xs font-light text-white/60">Automating the world&apos;s most influential brands.</p>
+              </div>
+              <div className="flex flex-col items-center gap-4">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">03 // UNITY</span>
+                <p className="text-xs font-light text-white/60">Synchronizing human vision with machine scale.</p>
               </div>
             </div>
-          ))}
+          </FadeIn>
         </div>
-      </section>
-
-      {/* Open Roles */}
-      <section className="py-24 container mx-auto px-6 max-w-4xl">
-        <p className="text-xs font-bold uppercase tracking-widest text-primary mb-10">Open Positions</p>
-        <div className="space-y-4">
-          {ROLES.map(role => (
-            <a
-              key={role.title}
-              href="#"
-              className="block rounded-2xl border border-white/10 bg-white/[0.02] p-6 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-bold text-white group-hover:text-primary transition-colors mb-1">{role.title}</h3>
-                  <p className="text-white/40 text-sm mb-3">{role.team} · {role.type}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {role.tags.map(tag => (
-                      <span key={tag} className="px-2 py-0.5 rounded-lg bg-white/5 border border-white/10 text-white/40 text-xs font-medium">{tag}</span>
-                    ))}
-                  </div>
-                </div>
-                <ArrowRight className="w-5 h-5 text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-8 text-center">
-          <p className="font-bold text-white mb-2">Don&apos;t see your role?</p>
-          <p className="text-white/40 text-sm mb-6">We&apos;re always looking for exceptional talent. Send us your resume.</p>
-          <a href="/support/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-black font-bold text-sm hover:shadow-[0_0_30px_rgba(0,242,255,0.4)] transition-all duration-300">
-            Get in Touch <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
-      </section>
+      </main>
 
       <Footer />
     </div>

@@ -223,8 +223,9 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { label: "About Us", href: "/about" },
-                { label: "Our Mission", href: "/#mission" },
+                { label: "Our Mission", href: "/mission" },
                 { label: "Careers", href: "/careers" },
+                { label: "Referral Program", href: "/referral" },
               ].map((link) => (
                 <FooterLink key={link.label} href={link.href}>
                   {link.label}
