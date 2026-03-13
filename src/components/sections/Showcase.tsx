@@ -7,41 +7,41 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const influences = [
-  { 
-    name: "Aria", 
-    role: "Fashion AI", 
-    image: "/influencers/Gemini_Generated_Image_3uonyc3uonyc3uon.png", 
-    color: "from-pink-500/40", 
+  {
+    name: "Aria",
+    role: "Fashion AI",
+    image: "/influencers/Gemini_Generated_Image_3uonyc3uonyc3uon.png",
+    color: "from-pink-500/40",
     tag: "Trendsetter",
     useCase: "Digital Brand Ambassador for High-End Fashion",
     grid: "lg:col-span-2 lg:row-span-2",
     position: "object-center"
   },
-  { 
-    name: "Leo", 
-    role: "Tech Visionary", 
-    image: "/influencers/Gemini_Generated_Image_bgwoo4bgwoo4bgwo.png", 
-    color: "from-blue-500/40", 
+  {
+    name: "Leo",
+    role: "Tech Visionary",
+    image: "/influencers/Gemini_Generated_Image_bgwoo4bgwoo4bgwo.png",
+    color: "from-blue-500/40",
     tag: "Innovator",
     useCase: "Virtual Spokesperson for AI Startups",
     grid: "lg:col-span-1 lg:row-span-1",
     position: "object-center"
   },
-  { 
-    name: "Maya", 
-    role: "Fitness Coach", 
-    image: "/influencers/Gemini_Generated_Image_m9r228m9r228m9r2.png", 
-    color: "from-green-500/40", 
+  {
+    name: "Maya",
+    role: "Fitness Coach",
+    image: "/influencers/Gemini_Generated_Image_m9r228m9r228m9r2.png",
+    color: "from-green-500/40",
     tag: "Coach",
     useCase: "24/7 Virtual Trainer & Wellness Guide",
     grid: "lg:col-span-1 lg:row-span-2",
     position: "object-top" // Use object-top to ensure face/top body is visible in tall card
   },
-  { 
-    name: "Kai", 
-    role: "Digital Artist", 
-    image: "/influencers/Gemini_Generated_Image_x1qt09x1qt09x1qt.png", 
-    color: "from-purple-500/40", 
+  {
+    name: "Kai",
+    role: "Digital Artist",
+    image: "/influencers/Gemini_Generated_Image_x1qt09x1qt09x1qt.png",
+    color: "from-purple-500/40",
     tag: "Creator",
     useCase: "Visual Identity for Social Media & Brand Projects",
     grid: "lg:col-span-1 lg:row-span-1",
@@ -64,7 +64,7 @@ export function Showcase() {
             </div>
             <h2 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9]">
               THESE ARE <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/20 via-white to-white/20 italic font-light">AI TALENTS</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/20 via-white to-white/20 italic font-light pr-4">AI TALENTS</span>
             </h2>
             <p className="text-white/40 text-2xl leading-relaxed font-light max-w-2xl">
               Beautifully crafted for realism. Our AI characters are ready to represent your brand or scale your content 24/7.
@@ -90,16 +90,16 @@ export function Showcase() {
                   "absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/90 z-10",
                   "group-hover:via-primary/5 group-hover:to-black transition-all duration-700"
                 )} />
-                
+
                 {/* Placeholder for Influencer Image */}
                 <div className={cn(
                   "w-full h-full bg-zinc-900 group-hover:scale-110 transition-transform duration-[2s] ease-out flex items-center justify-center border-b border-white/5",
                   `bg-gradient-to-br ${inf.color}`
                 )}>
                   {inf.image ? (
-                    <img 
-                      src={inf.image} 
-                      alt={inf.name} 
+                    <img
+                      src={inf.image}
+                      alt={inf.name}
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                     />
                   ) : (
@@ -107,12 +107,12 @@ export function Showcase() {
                   )}
                 </div>
               </div>
-              
+
               {/* Noise Pattern Overlay */}
               <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-20" />
 
               <div className="absolute inset-0 p-10 flex flex-col justify-end z-30">
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + i * 0.1 }}
@@ -124,17 +124,17 @@ export function Showcase() {
                     </span>
                     <div className="h-[1px] flex-grow bg-white/10" />
                   </div>
-                  
+
                   <div>
                     <span className="text-[10px] font-black text-primary/60 uppercase tracking-[0.3em] block mb-2">
                       {inf.role}
                     </span>
-                    <h3 className="text-5xl font-black text-white tracking-tighter group-hover:text-primary transition-colors duration-500">
+                    <h3 className="text-5xl font-black text-white tracking-tighter group-hover:text-primary transition-colors duration-500 leading-tight">
                       {inf.name}
                     </h3>
                   </div>
-                  
-                  <div className="h-0 group-hover:h-24 overflow-hidden transition-all duration-700 opacity-0 group-hover:opacity-100">
+
+                  <div className="h-0 group-hover:h-auto group-hover:max-h-32 overflow-hidden transition-all duration-700 opacity-0 group-hover:opacity-100">
                     <p className="text-sm text-white/40 leading-relaxed font-light mt-4">
                       {inf.useCase}
                     </p>
@@ -153,11 +153,7 @@ export function Showcase() {
           </FadeIn>
         ))}
       </div>
-      
-      {/* Decorative Bottom Text */}
-      <div className="mt-32 text-center">
-        <p className="text-[10px] font-black uppercase tracking-[0.8em] text-white/5">Premium AI Services</p>
-      </div>
+
     </section>
   );
 }

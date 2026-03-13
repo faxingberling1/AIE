@@ -55,20 +55,18 @@ function Toggle({
       aria-checked={checked}
       disabled={disabled}
       onClick={() => onChange?.(!checked)}
-      className={`relative inline-flex h-5 w-9 flex-shrink-0 rounded-full border transition-all duration-300 focus:outline-none ${
-        disabled
+      className={`relative inline-flex h-5 w-9 flex-shrink-0 rounded-full border transition-all duration-300 focus:outline-none ${disabled
           ? "border-white/10 bg-white/10 cursor-not-allowed"
           : checked
-          ? "border-primary/60 bg-primary/20 cursor-pointer"
-          : "border-white/10 bg-white/5 cursor-pointer hover:border-white/20"
-      }`}
+            ? "border-primary/60 bg-primary/20 cursor-pointer"
+            : "border-white/10 bg-white/5 cursor-pointer hover:border-white/20"
+        }`}
     >
       <span
-        className={`pointer-events-none inline-block h-4 w-4 rounded-full shadow transition-all duration-300 mt-0.5 ${
-          checked
+        className={`pointer-events-none inline-block h-4 w-4 rounded-full shadow transition-all duration-300 mt-0.5 ${checked
             ? "translate-x-4 bg-primary"
             : "translate-x-0.5 bg-white/30"
-        }`}
+          }`}
       />
     </button>
   );
@@ -124,23 +122,23 @@ export function CookieBanner() {
 
       {/* Main Banner / Panel */}
       <div
-        className={`fixed z-[200] transition-all duration-500 ${
-          showPanel
-            ? "inset-4 md:inset-auto md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:w-[540px]"
-            : "bottom-5 left-4 right-4 md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:w-[680px]"
-        }`}
+        className={`fixed left-0 right-0 z-[200] transition-all duration-500 ${showPanel
+            ? "bottom-0 w-full lg:w-[100vw]"
+            : "bottom-0 w-full"
+          }`}
         style={{
           animation: "slideUpFade 0.45s cubic-bezier(0.16, 1, 0.3, 1) both",
         }}
       >
-        <div className="relative rounded-2xl border border-white/[0.12] bg-black/80 backdrop-blur-2xl shadow-[0_0_60px_rgba(0,0,0,0.8),0_0_20px_rgba(0,242,255,0.06)] overflow-hidden">
+        <div className="relative border-t border-white/[0.12] bg-black/95 backdrop-blur-3xl shadow-[0_-20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
           {/* Top accent line */}
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
           {/* ── Simple Banner ── */}
           {!showPanel && (
-            <div className="p-5 md:p-6">
-              <div className="flex flex-col md:flex-row md:items-center gap-4">
+            <div className="py-6 md:py-8">
+              <div className="container mx-auto px-6">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 {/* Icon + Text */}
                 <div className="flex items-start gap-3 flex-1">
                   <div className="w-8 h-8 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -187,6 +185,7 @@ export function CookieBanner() {
                   >
                     Accept All
                   </button>
+                  </div>
                 </div>
               </div>
             </div>

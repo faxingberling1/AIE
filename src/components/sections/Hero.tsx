@@ -25,18 +25,18 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 px-4 mx-auto text-center">
-        <div 
+        <div
           className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass mb-10 border border-primary/30 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.4em] shadow-[0_0_20px_rgba(0,242,255,0.2)]"
         >
           <Sparkles className="w-4 h-4" />
           <span>Join the Next Wave of Content</span>
         </div>
 
-        <h1 
-          className="text-7xl md:text-[11rem] font-black tracking-tighter mb-10 leading-[0.85] perspective-2000"
+        <h1
+          className="text-7xl md:text-[min(11rem,15vw)] font-black tracking-tighter mb-10 leading-[1.05] perspective-2000"
         >
           <span className="block text-white/90 drop-shadow-2xl uppercase">Create AI</span>
-          <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary drop-shadow-[0_0_30px_rgba(0,242,255,0.4)]">
+          <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary drop-shadow-[0_0_30px_rgba(0,242,255,0.4)] pr-4">
             INFLUENCERS
           </span>
         </h1>

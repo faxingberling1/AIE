@@ -5,7 +5,6 @@ import { ClientTicker } from "@/components/sections/ClientTicker";
 import { AIServices } from "@/components/sections/AIServices";
 import { Showcase } from "@/components/sections/Showcase";
 import { CourseMarketplace } from "@/components/sections/CourseMarketplace";
-import { Pricing } from "@/components/sections/Pricing";
 import { ProblemStatement } from "@/components/sections/ProblemStatement";
 import { Solution } from "@/components/sections/Solution";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -15,14 +14,14 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white selection:bg-primary/30 selection:text-primary">
       {/* Global Aesthetics */}
       <div className="fixed inset-0 z-[99] pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      
+
       <Navbar />
-      
+
       <div className="relative">
         <Hero />
         <ClientTicker />
         <AIServices />
-        
+
         <div id="influencers" className="relative z-10 bg-black">
           <Showcase />
         </div>
@@ -35,9 +34,8 @@ export default function Home() {
           <ProblemStatement />
         </div>
 
-        <div id="pricing" className="relative z-10 bg-black">
+        <div id="marketplace" className="relative z-10 bg-black">
           <CourseMarketplace />
-          <Pricing />
         </div>
 
         <div id="testimonials" className="relative z-10 bg-black">

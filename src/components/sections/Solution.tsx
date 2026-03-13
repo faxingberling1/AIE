@@ -31,14 +31,14 @@ export function Solution() {
     <section className="py-40 bg-black relative overflow-hidden">
       {/* Background Tech elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn>
           <div className="text-center mb-32">
             <span className="text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-8 block">Our Process</span>
-            <h2 className="text-7xl md:text-9xl font-black tracking-tighter mt-4 leading-[0.85]">
+            <h2 className="text-7xl md:text-8xl font-black tracking-tighter mt-4 leading-[1.05]">
               HOW IT <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary/50">WORKS</span>
             </h2>
@@ -47,65 +47,62 @@ export function Solution() {
 
         {/* Central Synthesis Mockup */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-40">
-           <FadeIn>
-              <div className="relative aspect-square glass rounded-[3rem] border-white/5 p-12 overflow-hidden group">
-                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-                 
-                 {/* Mock UI */}
-                 <div className="relative h-full border border-white/10 rounded-2xl flex items-center justify-center bg-black/40 backdrop-blur-xl">
-                    <div className="flex flex-col gap-8 w-full max-w-xs scale-90 md:scale-100">
-                       {[1,2,3].map((i) => (
-                          <div key={i} className="space-y-3">
-                             <div className="flex justify-between text-[10px] font-black tracking-widest text-primary/40 uppercase">
-                                <span>Step 0{i} Creation</span>
-                                <span>{95 + i}%</span>
-                             </div>
-                             <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                                <motion.div 
-                                  initial={{ width: 0 }}
-                                  whileInView={{ width: `${95 + i}%` }}
-                                  transition={{ duration: 2, delay: i * 0.2 }}
-                                  className="h-full bg-gradient-to-r from-primary to-blue-500 shadow-neon"
-                                />
-                             </div>
-                          </div>
-                       ))}
-                       <div className="mt-8 flex justify-center">
-                          <div className="w-24 h-24 rounded-full border-2 border-primary/20 flex items-center justify-center relative">
-                             <div className="absolute inset-0 border-2 border-primary rounded-full animate-ping opacity-20" />
-                             <Bot className="w-10 h-10 text-primary animate-pulse" />
-                          </div>
-                       </div>
-                    </div>
-                 </div>
+          <FadeIn>
+            <div className="relative aspect-square group">
+              {/* Glow Frame Effect */}
+              <div className="absolute -inset-4 bg-primary/20 rounded-[4rem] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-primary/10 rounded-[3rem] border border-primary/20 shadow-[0_0_50px_rgba(0,242,255,0.15)] group-hover:shadow-[0_0_80px_rgba(0,242,255,0.3)] transition-all duration-700" />
 
-                 {/* Decorative Info */}
-                 <div className="absolute bottom-6 right-8 text-[8px] font-mono text-white/10 text-right leading-tight uppercase">
-                    Core_Active <br />
-                    Identity_Linked <br />
-                    System_Ready
-                 </div>
+              <div className="relative h-full w-full rounded-[3rem] overflow-hidden border border-white/10 glass p-3">
+                <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden">
+                  <img
+                    src="/influencers/Gemini_Generated_Image_vjfxaivjfxaivjfx.png"
+                    alt="AI Creation Process"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+
+                  {/* Animated Scanning Line */}
+                  <motion.div
+                    initial={{ top: "-10%" }}
+                    animate={{ top: "110%" }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_15px_#00F2FF] z-20"
+                  />
+
+                  {/* Badge */}
+                  <div className="absolute bottom-8 left-8 flex items-center gap-3 px-4 py-2 rounded-xl bg-black/60 backdrop-blur-md border border-white/10">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-white/80">Neural Synthesis Active</span>
+                  </div>
+                </div>
               </div>
-           </FadeIn>
 
-           <div className="space-y-12">
-              <FadeIn delay={0.2}>
-                 <h3 className="text-4xl font-black tracking-tight text-white mb-6">Create Your AI Brand.</h3>
-                 <p className="text-white/40 text-xl font-light leading-relaxed mb-10">
-                    Our platform builds <span className="text-white">Consistent AI Creators</span> that maintain the same look and personality across every single post.
-                 </p>
-                 <div className="grid grid-cols-2 gap-8 border-t border-white/5 pt-10">
-                    <div>
-                       <span className="text-3xl font-black text-white">90%</span>
-                       <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Cheaper Content</p>
-                    </div>
-                    <div>
-                       <span className="text-3xl font-black text-primary">Instant</span>
-                       <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Growth Boost</p>
-                    </div>
-                 </div>
-              </FadeIn>
-           </div>
+              {/* Decorative Tech Corners */}
+              <div className="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-primary/40 rounded-tl-2xl pointer-events-none" />
+              <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-primary/40 rounded-br-2xl pointer-events-none" />
+            </div>
+          </FadeIn>
+
+          <div className="space-y-12">
+            <FadeIn delay={0.2}>
+              <h3 className="text-4xl font-black tracking-tight text-white mb-6">Create Your AI Brand.</h3>
+              <p className="text-white/40 text-xl font-light leading-relaxed mb-10">
+                Our platform builds <span className="text-white">Consistent AI Creators</span> that maintain the same look and personality across every single post.
+              </p>
+              <div className="grid grid-cols-2 gap-8 border-t border-white/5 pt-10">
+                <div>
+                  <span className="text-3xl font-black text-white">90%</span>
+                  <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Cheaper Content</p>
+                </div>
+                <div>
+                  <span className="text-3xl font-black text-primary">Instant</span>
+                  <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Growth Boost</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

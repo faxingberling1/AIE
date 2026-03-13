@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  UserPlus, 
-  Video, 
-  Mic2, 
-  FileText, 
-  Palette, 
-  BarChart3, 
+import {
+  UserPlus,
+  Video,
+  Mic2,
+  FileText,
+  Palette,
+  BarChart3,
   Zap,
   Sparkles,
   Play,
@@ -104,11 +104,11 @@ export function AIServices() {
             <Sparkles className="w-3 h-3" />
             <span>Premium AI Services</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter italic mb-8">
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter italic mb-8 pr-4">
             Empower Your <span className="text-primary">Brand</span>
           </h2>
           <p className="text-white/40 max-w-3xl mx-auto text-xl leading-relaxed">
-            From hyper-realistic AI avatars to automated influencer campaigns, 
+            From hyper-realistic AI avatars to automated influencer campaigns,
             AIE offers advanced AI services designed to supercharge your business.
           </p>
         </div>
@@ -140,7 +140,7 @@ export function AIServices() {
                   <h3 className="text-2xl font-black tracking-tight mb-4 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-white/40 mb-8 leading-relaxed text-sm">
                     {service.description}
                   </p>
@@ -156,12 +156,12 @@ export function AIServices() {
 
                   <div className="flex items-center justify-between pt-6 border-t border-white/5 mt-auto">
                     <div className="flex items-center gap-2">
-                       <Zap className="w-3 h-3 text-primary" />
-                       <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">
-                         {service.credits}
-                       </span>
+                      <Zap className="w-3 h-3 text-primary" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">
+                        {service.credits}
+                      </span>
                     </div>
-                    
+
                     <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/20 group-hover:text-white transition-colors">
                       Demo <Play className="w-3 h-3" />
                     </button>
@@ -173,9 +173,9 @@ export function AIServices() {
         </div>
 
         <div className="mt-24 text-center">
-            <PremiumButton className="px-12 py-6 text-xl rounded-full">
-               Generate Your AI Influencer
-            </PremiumButton>
+          <PremiumButton className="px-12 py-6 text-xl rounded-full">
+            Generate Your AI Influencer
+          </PremiumButton>
         </div>
       </div>
     </section>

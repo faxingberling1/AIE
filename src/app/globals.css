@@ -10,12 +10,9 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   min-height: 100vh;
 }
 
@@ -23,7 +20,7 @@ body {
   .glass {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-glass;
   }
-  
+
   .glass-dark {
     @apply bg-black/40 backdrop-blur-xl border border-white/5 shadow-glass;
   }
@@ -33,7 +30,7 @@ body {
   }
 
   .neon-text {
-    @apply text-primary drop-shadow-[0_0_8px_rgba(0,242,255,0.8)];
+    @apply text-primary drop-shadow-[0_0_8px_rgba(0, 242, 255, 0.8)];
   }
 
   .neon-border {
@@ -50,8 +47,15 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .floating {

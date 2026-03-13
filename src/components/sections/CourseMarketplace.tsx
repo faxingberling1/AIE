@@ -74,7 +74,7 @@ export function CourseMarketplace() {
               <GlassCard className="flex flex-col h-full group border-white/5 hover:border-primary/20 transition-all duration-500 p-0 overflow-hidden bg-white/[0.02] hover:bg-white/[0.04]">
                 {/* Course Header with Card-like visual */}
                 <div className="p-8 pb-0">
-                   <div className="flex justify-between items-start mb-6">
+                  <div className="flex justify-between items-start mb-6">
                     <span className="px-3 py-1 rounded-full glass border border-white/10 text-[10px] font-bold uppercase tracking-widest text-primary shadow-[0_0_10px_rgba(0,242,255,0.1)]">
                       {course.tag}
                     </span>
@@ -83,8 +83,8 @@ export function CourseMarketplace() {
                       <span>{course.rating}</span>
                     </div>
                   </div>
-                  
-                  <h3 className="text-2xl font-bold mb-8 group-hover:text-primary transition-colors line-clamp-2 h-16 leading-tight">
+
+                  <h3 className="text-2xl font-bold mb-8 group-hover:text-primary transition-colors line-clamp-2 min-h-16 leading-tight">
                     {course.title}
                   </h3>
                 </div>
@@ -100,14 +100,14 @@ export function CourseMarketplace() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="px-8 pb-8 flex-grow">
                   <div className="grid grid-cols-2 gap-y-4 gap-x-2 border-y border-white/5 py-6">
                     <div className="flex items-center gap-3 text-white/40 text-sm">
                       <div className="p-2 rounded-lg bg-white/5">
                         <User className="w-4 h-4" />
                       </div>
-                      <span className="truncate">{course.instructor}</span>
+                      <span className="break-words">{course.instructor}</span>
                     </div>
                     <div className="flex items-center gap-3 text-white/40 text-sm">
                       <div className="p-2 rounded-lg bg-white/5">
