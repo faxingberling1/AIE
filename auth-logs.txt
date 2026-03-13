@@ -1,0 +1,34 @@
+2026-03-13T02:05:22.707Z - Authorize start: user@aie.com
+2026-03-13T02:05:22.748Z - Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+2026-03-13T02:05:29.297Z - Authorize start: user@aie.com
+2026-03-13T02:05:29.338Z - Error: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+2026-03-13T02:06:02.362Z - Authorize start: user@aie.com
+2026-03-13T02:06:02.449Z - Password comparison: true
+2026-03-13T02:10:58.516Z - Authorize start: user@aie.com
+2026-03-13T02:10:58.575Z - Password comparison: true
+2026-03-13T02:11:04.880Z - Authorize start: user@aie.com
+2026-03-13T02:11:04.954Z - Password comparison: true
+2026-03-13T02:11:06.304Z - Authorize start: user@aie.com
+2026-03-13T02:11:06.353Z - Password comparison: true
+2026-03-13T02:11:19.903Z - Authorize start: user@aie.com
+2026-03-13T02:11:19.956Z - Password comparison: true
+2026-03-13T02:13:24.515Z - Authorize start: user@aie.com
+2026-03-13T02:13:24.594Z - Password comparison: true
+2026-03-13T02:15:55.844Z - Authorize start: admin@aie.com
+2026-03-13T02:15:55.902Z - Password comparison: true
+2026-03-13T02:16:19.235Z - Authorize start: user@aie.com
+2026-03-13T02:16:19.297Z - Password comparison: true
+2026-03-13T02:39:03.641Z - Authorize start: admin@aie.com
+2026-03-13T02:39:03.716Z - Password comparison: true

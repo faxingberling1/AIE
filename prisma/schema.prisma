@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  password      String?
+  image         String?
+  role          UserRole  @default(USER)
+  credits       Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Multi-tenancy / Relationships
+  courses       UserCourse[]
+  transactions  CreditTransaction[]
+  referrals     Referral[]  @relation("Referrer")
+  referredBy    Referral?   @relation("Referred")
+}
+
+model Course {
+  id            String    @id @default(cuid())
+  title         String
+  description   String
+  instructor    String
+  price         Float
+  image         String?
+  modules       Module[]
+  users         UserCourse[]
+  createdAt     DateTime  @default(now())
+}
+
+model Module {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id])
+}
+
+model UserCourse {
+  id        String   @id @default(cuid())
+  userId    String
+  courseId  String
+  progress  Float    @default(0)
+  user      User     @relation(fields: [userId], references: [id])
+  course    Course   @relation(fields: [courseId], references: [id])
+  @@unique([userId, courseId])
+}
+
+model CreditTransaction {
+  id        String   @id @default(cuid())
+  userId    String
+  amount    Int
+  type      String   // "PURCHASE" | "USAGE" | "REFERRAL"
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Referral {
+  id            String   @id @default(cuid())
+  referrerId    String
+  referredId    String   @unique
+  referrer      User     @relation("Referrer", fields: [referrerId], references: [id])
+  referred      User     @relation("Referred", fields: [referredId], references: [id])
+  rewardClaimed Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}
