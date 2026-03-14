@@ -61,5 +61,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/auth/login",
+    error: "/auth/login", // Redirect to login on error
   },
 };
