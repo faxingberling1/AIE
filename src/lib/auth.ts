@@ -36,6 +36,7 @@ export const authOptions: NextAuthOptions = {
             role: user.role,
           };
         } catch (err: any) {
+          console.error("Auth error in authorize callback:", err);
           return null;
         }
       },
